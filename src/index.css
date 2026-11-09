@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html.light {
+    color-scheme: light;
+  }
+
+  /* Custom Light mode base adjustments while honoring Soft Ivory surfaces */
+  html.light body {
+    background-color: #F5F3EA;
+    color: #171C26;
+  }
+
+  html.light .bg-midnight {
+    background-color: #FAF9F4;
+  }
+
+  html.light .bg-charcoal,
+  html.light .bg-charcoal-surface {
+    background-color: #FFFFFF;
+    border-color: #DDD8C7;
+  }
+
+  html.light .bg-charcoal-elevated {
+    background-color: #F5F3EA;
+    border-color: #DDD8C7;
+  }
+
+  html.light .text-white {
+    color: #101827;
+  }
+
+  html.light .text-slate-100 {
+    color: #171C26;
+  }
+
+  html.light .text-slate-200 {
+    color: #2D3748;
+  }
+
+  html.light .text-slate-300 {
+    color: #4A5568;
+  }
+
+  html.light .text-slate-400 {
+    color: #718096;
+  }
+
+  html.light .border-charcoal-border {
+    border-color: #E2DFD2;
+  }
+
+  /* Accessible Keyboard Focus Indicators (WCAG 2.1 AA) */
+  :focus-visible {
+    outline: 2px solid #C6F36B;
+    outline-offset: 2px;
+  }
+
+  html.light :focus-visible {
+    outline: 2px solid #101827;
+    outline-offset: 2px;
+  }
+
+  /* Reduced Motion Support (WCAG 2.2.2 / 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Screen Reader Utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Custom scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #2A3446;
+    border-radius: 9999px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #3A4659;
+  }
+}
